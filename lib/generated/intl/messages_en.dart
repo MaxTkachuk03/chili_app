@@ -25,6 +25,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "chiliapp": MessageLookupByLibrary.simpleMessage("ChiliApp"),
         "clickAndContinue":
             MessageLookupByLibrary.simpleMessage("Click and continue"),
+        "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+        "pleaseConnectToInternet": MessageLookupByLibrary.simpleMessage(
+            "Please, connect to internet!"),
+        "pleaseTryAgainLater":
+            MessageLookupByLibrary.simpleMessage("Please try again later"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong!"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
         "welcomeToChiliapp":
             MessageLookupByLibrary.simpleMessage("Welcome to ChiliApp")
       };

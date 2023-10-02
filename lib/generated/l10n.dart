@@ -79,6 +79,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter`
+  String get enter {
+    return Intl.message(
+      'Enter',
+      name: 'enter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, connect to internet!`
+  String get pleaseConnectToInternet {
+    return Intl.message(
+      'Please, connect to internet!',
+      name: 'pleaseConnectToInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong!`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong!',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please try again later`
+  String get pleaseTryAgainLater {
+    return Intl.message(
+      'Please try again later',
+      name: 'pleaseTryAgainLater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get tryAgain {
+    return Intl.message(
+      'Try again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

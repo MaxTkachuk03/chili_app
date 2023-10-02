@@ -1,5 +1,10 @@
 {
   "welcomeToChiliapp": "Welcome to ChiliApp",
   "clickAndContinue": "Click and continue",
-  "chiliapp": "ChiliApp"
+  "chiliapp": "ChiliApp",
+  "enter": "Enter",
+  "pleaseConnectToInternet": "Please, connect to internet!",
+  "somethingWentWrong": "Something went wrong!",
+  "pleaseTryAgainLater": "Please try again later",
+  "tryAgain": "Try again"
 }
