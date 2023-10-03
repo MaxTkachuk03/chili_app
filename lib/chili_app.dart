@@ -1,4 +1,4 @@
-import 'package:chili_app/bloc/check_internet_bloc/bloc/check_internet_bloc.dart';
+import 'package:chili_app/bloc/check_internet_bloc/check_internet_bloc.dart';
 import 'package:chili_app/pages/pages.dart';
 import 'package:chili_app/repository/internet_connection/check_internet.dart';
 import 'package:chili_app/resources/resources.dart';
