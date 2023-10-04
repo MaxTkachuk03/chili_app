@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
-
 import 'package:chili_app/models/gifs_model.dart';
 import 'package:chili_app/repository/repository.dart';
-import 'package:flutter/material.dart';
 
 class GifsRepository extends AbstractGifsRepository {
   GifsRepository({
@@ -29,7 +27,7 @@ class GifsRepository extends AbstractGifsRepository {
     }
 
     final responseData = response.data as Map<String, dynamic>;
-    final List data = responseData["data"]; //as Map<String, dynamic>;
+    final List data = responseData["data"];
 
     List<GifsModel> gifsUrl = [];
     for (int i = 0; i < data.length; i++) {
@@ -38,11 +36,6 @@ class GifsRepository extends AbstractGifsRepository {
       final gifsHeight = gifsImages["fixed_height"] as Map<String, dynamic>;
       gifsUrl.add(GifsModel.fromJson(gifsHeight));
     }
-
-    debugPrint(responseData.toString());
-    debugPrint(
-        "==================================================================================================");
-    debugPrint(gifsUrl.toString());
 
     return gifsUrl;
   }
