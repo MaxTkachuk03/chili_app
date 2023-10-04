@@ -31,4 +31,5 @@ class AppStyles {
   static const buttonStyle = ButtonStyle(
     iconColor: MaterialStatePropertyAll(AppColors.defaultWhiteColor),
   );
+  
 }

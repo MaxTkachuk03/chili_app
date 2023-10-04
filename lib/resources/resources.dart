@@ -1,3 +1,4 @@
+export 'borders/borders.dart';
 export 'colors/colors.dart';
 export 'icons/icons.dart';
 export 'styles/styles.dart';

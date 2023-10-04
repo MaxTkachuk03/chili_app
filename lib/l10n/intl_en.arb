@@ -6,5 +6,7 @@
   "pleaseConnectToInternet": "Please, connect to internet!",
   "somethingWentWrong": "Something went wrong!",
   "pleaseTryAgainLater": "Please try again later",
-  "tryAgain": "Try again"
+  "tryAgain": "Try again",
+  "writeName": "Write name",
+  "download": "DownLoad"
 }

@@ -14,7 +14,10 @@ class GifsRepository extends AbstractGifsRepository {
       "https://api.giphy.com/v1/gifs/trending?api_key=SizA2JnMQs1kw7HNgcj4hmBFXZKmVvGZ&limit=20&rating=g";
 
   @override
-  Future<List<GifsModel>> getGifs(String searching, int landslide) async {
+  Future<List<GifsModel>> getGifs({
+    String searching = "",
+    int landslide = 0,
+  }) async {
     final Response response;
     final String secondUrel =
         "https://api.giphy.com/v1/gifs/search?api_key=SizA2JnMQs1kw7HNgcj4hmBFXZKmVvGZ&q=$searching&limit=19&offset=$landslide&rating=g&lang=en";
@@ -24,41 +27,23 @@ class GifsRepository extends AbstractGifsRepository {
     } else {
       response = await dio.get(secondUrel);
     }
-    // final responseData = _fetchGifs(response);
-    // return responseData;
 
-    final responseData = response.data; // as Map<String, dynamic>;
-    final data = responseData["data"];
-    final gifsImages = data[17] as Map<String, dynamic>;
-    final gifsHeight = gifsImages[6] as Map<String, dynamic>;
-    final gifs = gifsHeight.entries.map((value) {
-      final gifsData =
-          (value.value as Map<String, dynamic>)[3] as Map<String, dynamic>;
-      final gifsUrl = GifsModel.fromJson(gifsData);
-      return GifsModel(
-        url: gifsUrl.url,
-      );
-    }).toList();
-    return gifs;
-    // // final gifs = data.entries.map((value) {
-    // //   final responseData =
-    // //       (value.value as Map<String, dynamic>)['data'] as Map<String, dynamic>;
-    // //   final gifsData = GifsModel.fromJson(responseData);
-    // //   return GifsModel(
-    // //     images: gifsData.images,
-    // //     fixedHeight: gifsData.fixedHeight,
-    // //     url: gifsData.url,
-    // //   );
-    // // }).toList();
-    // debugPrint(responseData.toString());
+    final responseData = response.data as Map<String, dynamic>;
+    final List data = responseData["data"]; //as Map<String, dynamic>;
+
+    List<GifsModel> gifsUrl = [];
+    for (int i = 0; i < data.length; i++) {
+      final gifsMap = data[i] as Map<String, dynamic>;
+      final gifsImages = gifsMap["images"] as Map<String, dynamic>;
+      final gifsHeight = gifsImages["fixed_height"] as Map<String, dynamic>;
+      gifsUrl.add(GifsModel.fromJson(gifsHeight));
+    }
+
+    debugPrint(responseData.toString());
+    debugPrint(
+        "==================================================================================================");
+    debugPrint(gifsUrl.toString());
+
+    return gifsUrl;
   }
-
-  // List<GifsModel> _fetchGifs(Response<dynamic> response) {
-
-  //   // final List<Map<String, dynamic>> data = List<Map<String, dynamic>>.from(
-  //   //   response.data['data'],
-  //   // );
-  //   // final responseData = data.map((e) => GifsModel.fromJson(e)).toList();
-  //   return responseData;
-  // }
 }

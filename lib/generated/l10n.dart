@@ -129,6 +129,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Write name`
+  String get writeName {
+    return Intl.message(
+      'Write name',
+      name: 'writeName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DownLoad`
+  String get download {
+    return Intl.message(
+      'DownLoad',
+      name: 'download',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
