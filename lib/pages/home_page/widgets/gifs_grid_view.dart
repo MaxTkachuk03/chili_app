@@ -1,4 +1,4 @@
-import 'package:chili_app/models/gifs_model.dart';
+import 'package:chili_app/models/models.dart';
 import 'package:flutter/material.dart';
 
 class GifsGridView extends StatelessWidget {

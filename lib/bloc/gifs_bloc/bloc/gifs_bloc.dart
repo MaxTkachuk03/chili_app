@@ -1,5 +1,5 @@
 import 'package:chili_app/models/models.dart';
-import 'package:chili_app/repository/api/api.dart';
+import 'package:chili_app/repository/repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

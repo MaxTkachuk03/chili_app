@@ -1,5 +1,5 @@
+import 'package:chili_app/models/models.dart';
 import 'package:dio/dio.dart';
-import 'package:chili_app/models/gifs_model.dart';
 import 'package:chili_app/repository/repository.dart';
 
 class GifsRepository extends AbstractGifsRepository {

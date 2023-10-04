@@ -1,7 +1,7 @@
 import 'package:chili_app/bloc/check_internet_bloc/check_internet_bloc.dart';
 import 'package:chili_app/bloc/gifs_bloc/bloc/gifs_bloc.dart';
 import 'package:chili_app/generated/l10n.dart';
-import 'package:chili_app/pages/home_page/home_page.dart';
+import 'package:chili_app/pages/pages.dart';
 import 'package:chili_app/repository/repository.dart';
 import 'package:chili_app/resources/resources.dart';
 import 'package:flutter/material.dart';
@@ -55,33 +55,25 @@ class _HomePageState extends State<HomePage> {
             if (state.checkIternet == true) {
               return Column(
                 children: [
-                  const SizedBox(height: 10.0),
-                  Row(
-                    children: [
-                      const Spacer(),
-                      Flexible(
-                        flex: 8,
-                        child: TextField(
-                          onSubmitted: (text) {
-                            _gifsBloc.add(GifsSearchEvent(
-                              searching: text.trim(),
-                              landslide: 0,
-                            ));
-                          },
-                          decoration: InputDecoration(
-                            floatingLabelAlignment:
-                                FloatingLabelAlignment.center,
-                            labelText: S.of(context).writeName,
-                            labelStyle: theme.textTheme.labelLarge,
-                            enabledBorder: AppBorder.enabledBorder,
-                            focusedBorder: AppBorder.focusedBorder,
-                          ),
-                          style: theme.textTheme.displaySmall,
-                          textAlign: TextAlign.center,
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextField(
+                      onSubmitted: (text) {
+                        _gifsBloc.add(GifsSearchEvent(
+                          searching: text.trim(),
+                          landslide: 0,
+                        ));
+                      },
+                      decoration: InputDecoration(
+                        floatingLabelAlignment: FloatingLabelAlignment.center,
+                        labelText: S.of(context).writeName,
+                        labelStyle: theme.textTheme.labelLarge,
+                        enabledBorder: AppBorder.enabledBorder,
+                        focusedBorder: AppBorder.focusedBorder,
                       ),
-                      const Spacer(),
-                    ],
+                      style: theme.textTheme.displaySmall,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   Expanded(
                     child: BlocBuilder<GifsBloc, GifsState>(
